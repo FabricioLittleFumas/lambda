@@ -2,6 +2,7 @@ package principal;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
 
 import model.Usuario;
 
@@ -22,6 +23,15 @@ public class Principal {
 		for (Usuario usuario5 : usuarios) {
 			System.out.println(usuario5);
 		}
+		
+		usuarios.forEach(u -> System.out.println(u.getNome()));
+		
+		Consumer<Usuario> consumer =  u -> System.out.println(u.getPontos());
+		
+		usuarios.forEach(consumer);
+		
+		usuarios.forEach(u -> u.isModerador());
+		
 	}
 
 }
